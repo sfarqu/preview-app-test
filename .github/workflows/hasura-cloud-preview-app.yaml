@@ -16,6 +16,9 @@ jobs:
           region: us-west-1
           tier: cloud_free
           hasuraEnv: |
+            HASURA_GRAPHQL_AUTH_HOOK_MODE=POST
+            HASURA_GRAPHQL_DEFAULT_NAMING_CONVENTION=graphql-default
+            HASURA_GRAPHQL_EXPERIMENTAL_FEATURES=naming_convention
             PG_DATABASE_URL=${{secrets.POSTGRES_SERVER_CONNECTION_URI}}
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
