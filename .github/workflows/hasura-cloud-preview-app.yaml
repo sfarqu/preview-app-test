@@ -25,7 +25,7 @@ jobs:
           github-token: ${{secrets.GITHUB_TOKEN}}
           id: preview_app_comment
           number: ${{github.event.number}}
-          repository: "sjbabadi/preview-app-test"
+          repository: "sfarqu/preview-app-test"
           message: |
             Console URL available at ${{steps.hasura_cloud_preview.outputs.consoleURL}}
             GraphQL Endpoint available at ${{steps.hasura_cloud_preview.outputs.graphQLEndpoint}}
