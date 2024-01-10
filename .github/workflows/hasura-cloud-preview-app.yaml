@@ -16,14 +16,7 @@ jobs:
           region: us-west-1
           tier: cloud_free
           hasuraEnv: |
-            HASURA_GRAPHQL_AUTH_HOOK=https://deploy-preview-${{github.event.number}}.app.upwell.com/
-            HASURA_GRAPHQL_AUTH_HOOK_MODE=POST
-            HASURA_GRAPHQL_DEFAULT_NAMING_CONVENTION=graphql-default
-            HASURA_GRAPHQL_EXPERIMENTAL_FEATURES=naming_convention
             PG_DATABASE_URL=${{secrets.POSTGRES_SERVER_CONNECTION_URI}}
-            HASURA_ADMIN_SECRET=someadminsecret4
-            WEBHOOK_AUTH_SECRET=xxxxx
-            NEXTAUTH_URL=https://deploy-preview-${{github.event.number}}.app.upwell.com/
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
           HASURA_CLOUD_ACCESS_TOKEN: ${{secrets.HASURA_CLOUD_ACCESS_TOKEN}}
